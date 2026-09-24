@@ -5,7 +5,7 @@ import { MODELS, buildTryOnPrompt, type GarmentCategory } from "@/lib/models";
 import { db } from "@/lib/db";
 
 export const runtime = "nodejs";
-export const maxDuration = 300;
+export const maxDuration = 60;
 
 interface TryOnRequestBody {
   modelId: string;
