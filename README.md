@@ -313,6 +313,20 @@ Edita las variables CSS en `src/app/globals.css` (sección `:root` y `.dark`).
 - **Toasts**: sonner
 
 ---
+🚀 Despliegue y Operaciones (Deployment & Operations)
+🔗 Demo en producción: https://vistamodels-zqu2.vercel.app
+
+Esta sección documenta la puesta en producción del proyecto: despliegue, migraciones, integraciones y fiabilidad.
+
+Área	Trabajo realizado
+🔄 CI/CD	Pipeline automático: cada git push dispara build y despliegue en Vercel
+🗄️ Base de datos	Migración de SQLite → PostgreSQL gestionado (Neon), adaptando el esquema Prisma para entorno serverless
+🤖 Integración IA	Migración de proveedor: Z.ai → Google Gemini (API REST con entrada multi-imagen, reintentos automáticos y diagnóstico por logs)
+🖼️ Arquitectura serverless	Las imágenes generadas se persisten en PostgreSQL y se sirven vía API dinámica (/api/looks/[id]) — el disco local no persiste en serverless
+⏳ Ciclo de vida de datos	TTL de 24h con auto-limpieza para controlar el almacenamiento
+🛡️ Fiabilidad y seguridad	Reintentos ante fallos de la IA, límites de tamaño de subida, gestión de secretos por variables de entorno y rotación de credenciales
+Stack de producción: Vercel · Neon (PostgreSQL) · Google Gemini API · GitHub · Bun
+
 
 ## ⚠️ Notas legales
 
