@@ -19,5 +19,6 @@ model Look {
   garmentName String
   prompt      String
   resultPath  String
+  resultData  String?
   createdAt   DateTime @default(now())
 }
